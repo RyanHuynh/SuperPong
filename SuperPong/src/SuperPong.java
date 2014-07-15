@@ -33,15 +33,13 @@ public class SuperPong extends Ucigame
 	double blackHoleSpeed = 1;
 	public void setup()
 	{
-		window.size(1000, 660);
+		//window.size(1000, 660);
 		window.title("SuperPong");
 		framerate(30);
 		Image bkg = getImage("../Resources/Image/background.png");
 		canvas.background(bkg);
-		
 		initializeField();
 		initializeBall();
-		
 		selectArrow = makeSprite(getImage("../Resources/Image/selectarrow.png"));
 		selectArrow.position(canvas.width()/2 - 130, canvas.height()/2 - 25);
 		splitBlock = makeSprite(getImage("../Resources/Image/splitBlock.png"));
@@ -57,16 +55,15 @@ public class SuperPong extends Ucigame
         	canvas.background(getImage("../Resources/Image/firstscene.png"));
         	String[] fontlist = arrayOfAvailableFonts();
         	//println("fontlist[3]: " + fontlist[3]);   // arbitrarily choose fourth font
-        	canvas.font(fontlist[3], BOLD, 32, 255, 255, 255);
+        	canvas.font(fontlist[3], BOLD, 24, 255, 255, 255);
     	}
 
     	public void drawStart()
     	{
         	canvas.clear();
-		
-        		canvas.putText("Start Game", canvas.width()/2 - 80, canvas.height()/2);
+        	canvas.putText("Start Game", canvas.width()/2 - 80, canvas.height()/2);
 			canvas.putText("Instruction & Credit", canvas.width()/2 - 80, canvas.height()/2 + 30);
-			canvas.putText("Press 'Enter' to select...", canvas.width()/2 + 280, canvas.height()/2 + 320);
+			canvas.putText("Press 'Enter' to select...", canvas.width()/2 + 150, canvas.height()/2 + 300);
 			selectArrow.draw();
 		
 		if(whichState == 3)
